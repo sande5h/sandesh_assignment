@@ -1,0 +1,119 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightcyan;
+  border-radius: 2%;
+  box-shadow: #666;
+  
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  padding: 8px 2px;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.add-button {
+  padding: 8px 16px;
+  font-size: 18px;
+ 
+  cursor: pointer;
+  width: fit-content;
+  background-color: lightgreen;
+  border-radius: 10%;
+
+  
+}
+
+.search-terms {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Add this line to vertically center the search terms */
+padding: 2px 2px;
+  width: max-content;
+  background-color: white;
+}
+
+.button {
+  border-color: red;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.search-term {
+  display: inline-block;
+  background-color: lightseagreen;
+  padding: 6px 12px;
+  margin-left: 1px;
+  font-size: 14px;
+  border-radius: 4px;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.jobs-list {
+  margin-top: 20px;
+  box-shadow: #666;
+  
+}
+
+.job-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: aqua;
+}
+
+.job-item .job-info {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.job-item .company-logo {
+  max-width: 100px;
+}
+.job-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.company-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.company-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.no-jobs {
+  font-size: 16px;
+  color: #666;
+  margin-top: 20px;
+}
