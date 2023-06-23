@@ -1,8 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import jobsData from "../pages/jobs.json";
-import  "../styles/jobs.css";
-
+import "../styles/jobs.css";
+import Image from "next/image";
 
 const JobsPage = () => {
   const [searchTerms, setSearchTerms] = useState([]);
@@ -33,69 +34,64 @@ const JobsPage = () => {
 
   return (
     <div class="body-container">
-    <div class="container">
-     
-
-      <div class="search-bar">
-        <div class="search-terms">
-          {searchTerms.map((term, index) => (
-            <span key={index} class="search-term search-container">
-              {term}
-              <button
-                class="button"
-                onClick={() => handleRemoveSearchTerm(term)}
-              >
-                x
-              </button>
-            </span>
-          ))}
-          <input
-            class="search-input"
-            type="text"
-            placeholder="Search"
-            value={currentSearchTerm}
-            onChange={handleInputChange}
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                handleSearch();
-              }
-            }}
-          />
-          <button class="add-button" onClick={handleSearch}>
-            Add
-          </button>
+      <div class="container">
+        <div class="search-bar">
+          <div class="search-terms">
+            {searchTerms.map((term, index) => (
+              <span key={index} class="search-term search-container">
+                {term}
+                <button
+                  class="button"
+                  onClick={() => handleRemoveSearchTerm(term)}
+                >
+                  x
+                </button>
+              </span>
+            ))}
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search"
+              value={currentSearchTerm}
+              onChange={handleInputChange}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch();
+                }
+              }}
+            />
+            <button class="add-button" onClick={handleSearch}>
+              Add
+            </button>
+          </div>
         </div>
-        
-      </div>
 
-      {filteredJobs.length > 0 ? (
-        <div class="jobs-list">
-          {filteredJobs.map((job, index) => (
-            <div class="job-item">
-            <div  key={index}>
-              <h2 class="job-title">{job.position}</h2>
-              <p class="company-info">Company: {job.company}</p>
-              <p class="company-info">Location: {job.location}</p>
-              <p class="company-info">Keywords: {job.keywords.join(", ")}</p>
+        {filteredJobs.length > 0 ? (
+          <div class="jobs-list">
+            {filteredJobs.map((job, index) => (
+              <div class="job-item" key={index}>
+                <div>
+                  <h2 class="job-title">{job.position}</h2>
+                  <p class="company-info">Company: {job.company}</p>
+                  <p class="company-info">Location: {job.location}</p>
+                  <p class="company-info">
+                    Keywords: {job.keywords.join(", ")}
+                  </p>
+                </div>
+                <Image
+                  className="company-logo"
+                  src={job.company_logo}
+                  alt={job.company}
+                  width={100}
+                  height={100}
+                />
               </div>
-              <img
-            class="company-logo"
-            src={job.company_logo}
-            alt={job.company}
-          />
-            
-            </div>
-           
-          ))}
-        </div>
-        
-      
-        
-      ) : (
-        <p class="no-jobs">No job openings found.</p>
-        
-      )}
-    </div>
+            ))}
+          </div>
+        ) : (
+          <p class="no-jobs">No job openings found.</p>
+        )}
+      </div>
     </div>
   );
 };
