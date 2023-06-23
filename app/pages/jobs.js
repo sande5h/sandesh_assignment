@@ -41,7 +41,7 @@ const JobsPage = () => {
               <span key={index} class="search-term search-container">
                 {term}
                 <button
-                  class="button"
+                  class="button x-button"
                   onClick={() => handleRemoveSearchTerm(term)}
                 >
                   x
